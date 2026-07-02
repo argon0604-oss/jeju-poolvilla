@@ -42,8 +42,8 @@ body {
   height: 100vh;          /* vh = 화면 높이의 100% → 화면을 꽉 채움 */
   /* 배경: 어두운 반투명막(위) + 사진(아래)을 겹쳐서 글자가 잘 보이게 */
   background:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
-    url("https://picsum.photos/id/1018/1600/1000") center/cover no-repeat;
+    linear-gradient(rgba(20, 28, 45, 0.28), rgba(20, 28, 45, 0.40)),
+    url("../images/hero.png") center/cover no-repeat;
   /* 안쪽 내용을 가로·세로 가운데 정렬 */
   display: flex;
   align-items: center;
