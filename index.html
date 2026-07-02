@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- 이 파일이 웹사이트의 본체입니다. 브라우저는 이 파일을 위에서 아래로 읽으며 화면을 그립니다. -->
+<html lang="ko">
+
+<head>
+  <!-- head = 화면에 안 보이는 설정 영역 (문자 인코딩, 탭 제목, 스타일 연결 등) -->
+  <meta charset="UTF-8">
+  <!-- 모바일에서 화면 크기에 맞게 보이도록 하는 필수 한 줄 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>돌담채 — 제주 부티크 풀빌라</title>
+  <!-- 파비콘: 브라우저 탭에 뜨는 작은 아이콘 (이모지를 그림으로 사용) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏝️</text></svg>">
+
+  <!-- 구글 폰트: 고급스러운 명조체(제목용) + 본문용 고딕 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- 우리가 만든 디자인 파일(css) 연결 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- =============================================================
+       네비게이션 바 — 화면 맨 위에 항상 고정. 메뉴를 누르면 해당 섹션으로 이동.
+       a href="#id" = 같은 페이지 안에서 그 id를 가진 곳으로 점프
+       ============================================================= -->
+  <header class="nav">
+    <a href="#hero" class="nav-logo">돌담채</a>
+    <nav class="nav-menu">
+      <a href="#intro">소개</a>
+      <a href="#rooms">객실</a>
+      <a href="#gallery">사진</a>
+      <a href="#booking" class="nav-btn">예약</a>
+    </nav>
+  </header>
+
+  <!-- =============================================================
+       1. Hero — 첫 화면 (풀스크린 배경사진 + 브랜드명)
+       ============================================================= -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">돌담채</h1>
+      <p class="hero-slogan">돌담 안에서 머무는 기억</p>
+    </div>
+  </section>
+
+  <!-- =============================================================
+       2. Intro — 브랜드 소개
+       ============================================================= -->
+  <section id="intro" class="intro section">
+    <p class="section-label">STAY</p>
+    <p class="intro-text">
+      제주 현무암 돌담 사이, 오직 한 팀만을 위한 프라이빗 풀빌라.
+      바람 소리와 물결만 있는 하루를 준비했습니다.
+    </p>
+    <img class="intro-img" src="https://picsum.photos/id/1040/1000/620" alt="돌담채 전경">
+  </section>
+
+  <!-- =============================================================
+       3. Rooms — 객실 소개 (퀘스트 4에서 카드·레이아웃 채움)
+       ============================================================= -->
+  <section id="rooms" class="section">
+    <p class="section-label">ROOMS</p>
+    <h2 class="section-title">객실 안내</h2>
+
+    <!-- 필터 탭. 버튼을 누르면 JS가 data-filter 값에 맞는 카드만 보여줌 -->
+    <div class="filter-tabs">
+      <button class="filter-btn is-active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="pool">풀빌라</button>
+      <button class="filter-btn" data-filter="standard">스탠다드</button>
+    </div>
+
+    <!-- 객실 목록. 카드마다 data-속성으로 필터·요금 정보를 숨겨둠
+         data-category = 필터 분류 / data-price = 1박 요금(숫자) -->
+    <div class="room-list">
+
+      <!-- 객실 1 (이미지 왼쪽 / 글 오른쪽) -->
+      <article class="room" data-category="pool" data-price="450000">
+        <img class="room-img" src="https://picsum.photos/id/164/700/460" alt="오션 풀빌라">
+        <div class="room-body">
+          <h3 class="room-name">오션 풀빌라</h3>
+          <p class="room-desc">바다를 마주한 프라이빗 풀. 통창 너머로 수평선이 하루 종일 이어집니다.</p>
+          <ul class="room-spec">
+            <li>82㎡ · 기준 2인</li>
+            <li>프라이빗 풀 · 오션뷰</li>
+            <li>1박 700,000원~</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 객실 2 (글 왼쪽 / 이미지 오른쪽 — CSS로 순서 뒤집음) -->
+      <article class="room room-reverse" data-category="pool" data-price="380000">
+        <img class="room-img" src="https://picsum.photos/id/106/700/460" alt="가든 스위트">
+        <div class="room-body">
+          <h3 class="room-name">가든 스위트</h3>
+          <p class="room-desc">돌담으로 둘러싸인 정원과 풀. 가족·모임을 위한 넉넉한 공간입니다.</p>
+          <ul class="room-spec">
+            <li>66㎡ · 기준 4인</li>
+            <li>프라이빗 풀 · 가든뷰</li>
+            <li>1박 380,000원~</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 객실 3 -->
+      <article class="room" data-category="standard" data-price="240000">
+        <img class="room-img" src="https://picsum.photos/id/1048/700/460" alt="스톤 스탠다드">
+        <div class="room-body">
+          <h3 class="room-name">스톤 스탠다드</h3>
+          <p class="room-desc">현무암 질감을 살린 아늑한 룸. 조용히 머무는 두 사람에게 어울립니다.</p>
+          <ul class="room-spec">
+            <li>40㎡ · 기준 2인</li>
+            <li>풀 없음 · 마운틴뷰</li>
+            <li>1박 240,000원~</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       4. Gallery —  (퀘스트 4에서 이미지 그리드 채움)
+       ============================================================= -->
+  <section id="gallery" class="section">
+    <p class="section-label">GALLERY</p>
+    <h2 class="section-title">공간의 순간들</h2>
+
+    <!-- 사진 그리드. grid로 자동 정렬 (모바일에선 CSS가 열 수를 줄임) -->
+    <div class="gallery-grid">
+      <img src="https://picsum.photos/id/1043/500/500" alt="갤러리 사진 1">
+      <img src="https://picsum.photos/id/1039/500/500" alt="갤러리 사진 2">
+      <img src="https://picsum.photos/id/1015/500/500" alt="갤러리 사진 3">
+      <img src="https://picsum.photos/id/1016/500/500" alt="갤러리 사진 4">
+      <img src="https://picsum.photos/id/1024/500/500" alt="갤러리 사진 5">
+      <img src="https://picsum.photos/id/1020/500/500" alt="갤러리 사진 6">
+    </div>
+  </section>
+
+  <!-- =============================================================
+       5. Booking — 예약 (퀘스트 5에서 예약 폼 + 실시간 요금 계산 채움)
+       ============================================================= -->
+  <section id="booking" class="section booking">
+    <p class="section-label">RESERVATION</p>
+    <h2 class="section-title">예약 문의</h2>
+
+    <!-- 예약 영역: 왼쪽 입력 폼 + 오른쪽 요약(실시간 계산) -->
+    <div class="booking-wrap">
+
+      <!-- 입력 폼. 값이 바뀔 때마다 JS가 오른쪽 요약을 다시 계산 -->
+      <form class="booking-form" id="bookingForm">
+        <label>
+          이름
+          <input type="text" id="name" placeholder="예약자 성함" required>
+        </label>
+
+        <label>
+          객실 선택
+          <!-- option의 value = 1박 요금(숫자). JS가 이 값으로 계산 -->
+          <select id="room">
+            <option value="700000">오션 풀빌라 (1박 700,000원)</option>
+            <option value="380000">가든 스위트 (1박 380,000원)</option>
+            <option value="240000">스톤 스탠다드 (1박 240,000원)</option>
+          </select>
+        </label>
+
+        <div class="form-row">
+          <label>
+            체크인
+            <input type="date" id="checkin" required>
+          </label>
+          <label>
+            체크아웃
+            <input type="date" id="checkout" required>
+          </label>
+        </div>
+
+        <label>
+          인원
+          <input type="number" id="guests" value="2" min="1" max="8">
+        </label>
+
+        <button type="submit" class="submit-btn">예약 요청하기</button>
+      </form>
+
+      <!-- 요약 패널: JS가 여기 숫자를 실시간으로 채움 -->
+      <aside class="booking-summary">
+        <h3>예약 요약</h3>
+        <p class="summary-line">객실 <span id="sumRoom">오션 풀빌라</span></p>
+        <p class="summary-line">숙박 <span id="sumNights">0</span>박</p>
+        <p class="summary-line">인원 <span id="sumGuests">2</span>명</p>
+        <hr>
+        <p class="summary-total">총 요금 <span id="sumTotal">0원</span></p>
+        <!-- 제출하면 여기 확인 메시지가 뜸 -->
+        <p class="summary-msg" id="bookingMsg"></p>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- =============================================================
+       6. Footer — 맨 아래 정보
+       ============================================================= -->
+  <footer class="footer">
+    <p class="footer-brand">돌담채</p>
+    <p class="footer-info">제주특별자치도 서귀포시 · 010-0000-0000 · stay@doldamchae.kr</p>
+    <p class="footer-copy">© 2026 돌담채. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript 연결. body 맨 끝에 두는 이유: 위 HTML이 다 그려진 뒤 실행되게 -->
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
